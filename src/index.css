@@ -162,3 +162,85 @@
   padding: 0;
   text-align: center;
 }
+
+   /* 1. The Angle Property (Allows the smooth spin) */
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-border {
+  to {
+    --angle: 360deg;
+  }
+}
+
+   /* 2. The Glass Card Base & Outer Glow */
+
+.card-hover {
+  position: relative;
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Dark theme glass base */
+.dark .card-hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px -10px rgba(120, 119, 198, 0.5);
+}
+
+   /* 3. The Moving Light Beam (The Border) */
+
+.card-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; 
+  background: conic-gradient(
+    from var(--angle) at 50% 50%,
+    transparent 60%,
+    rgba(120, 119, 198, 1) 90%,
+    transparent 100%
+  );
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  /* Ensures the border overlay doesn't block you from clicking your Github/Demo links */
+  pointer-events: none;
+
+  /* Hidden by default */
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Trigger the spinning animation on hover */
+.card-hover:hover::after {
+  opacity: 1;
+  animation: spin-border 3s linear infinite;
+}
+
+
+   /* 2. Dark Theme Glass & Glow */
+
+.dark .card-hover {
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .card-hover:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(120, 119, 198, 0.3), 
+              inset 0 0 10px rgba(120, 119, 198, 0.1);
+  border-color: rgba(120, 119, 198, 0.5);
+}
