@@ -41,7 +41,7 @@ export const ExperienceSection = () => {
                     {internships.map((item, index) => (
                         <div
                             key={index}
-                            className="gradient-border p-6 card-hover text-center flex flex-col items-center max-w-md w-full"
+                            className="p-6 card-hover text-center flex flex-col items-center max-w-md w-full rounded-lg"
                         >
                             <div className="p-3 rounded-full bg-primary/10 mb-4">
                                 <Briefcase className="h-8 w-8 text-primary" />
