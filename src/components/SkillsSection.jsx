@@ -211,7 +211,7 @@ export const SkillsSection = () => {
                 {cat.items.map((skill, idx) => (
                   <div
                     key={`${cat.id}-${idx}`}
-                    className="bg-card p-6 rounded-lg shadow-xs card-hover group"
+                    className="p-6 rounded-lg card-hover group"
                   >
                     <div className="flex items-center gap-3 text-left mb-4">
                       {skill.icon}
