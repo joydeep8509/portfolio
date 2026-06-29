@@ -1,4 +1,5 @@
 import { Briefcase } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const internships = [
     {
@@ -30,12 +31,16 @@ export const ExperienceSection = () => {
         <section id="experience" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                    My <span className="text-primary">Experience</span>
-                </h2>
+                <Reveal>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                        My <span className="text-primary">Experience</span>
+                    </h2>
+                </Reveal>
 
                 {/* ---- Internships ---- */}
-                <h3 className="text-2xl font-semibold mb-6 text-center">Internships</h3>
+                <Reveal>
+                    <h3 className="text-2xl font-semibold mb-6 text-center">Internships</h3>
+                </Reveal>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-20 mb-16">
                     {internships.map((item, index) => (
@@ -43,23 +48,25 @@ export const ExperienceSection = () => {
                             key={index}
                             className="p-6 card-hover text-center flex flex-col items-center max-w-md w-full rounded-lg"
                         >
-                            <div className="p-3 rounded-full bg-primary/10 mb-4">
-                                <Briefcase className="h-8 w-8 text-primary" />
-                            </div>
+                            <Reveal className="flex flex-col items-center w-full">
+                                <div className="p-3 rounded-full bg-primary/10 mb-4">
+                                    <Briefcase className="h-8 w-8 text-primary" />
+                                </div>
 
-                            <h4 className="font-semibold text-xl">{item.title}</h4>
-                            <p className="text-base text-muted-foreground">
-                                {item.company} • {item.duration}
-                            </p>
+                                <h4 className="font-semibold text-xl">{item.title}</h4>
+                                <p className="text-base text-muted-foreground">
+                                    {item.company} • {item.duration}
+                                </p>
 
-                            <ul className="text-muted-foreground text-base mt-4 space-y-2 text-left">
-                                {item.description.map((point, i) => (
-                                    <li key={i} className="flex gap-2 items-start">
-                                        <span className="text-primary mt-1">•</span>
-                                        <span>{point}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                                <ul className="text-muted-foreground text-base mt-4 space-y-2 text-left">
+                                    {item.description.map((point, i) => (
+                                        <li key={i} className="flex gap-2 items-start">
+                                            <span className="text-primary mt-1">•</span>
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Reveal>
                         </div>
                     ))}
                 </div>
