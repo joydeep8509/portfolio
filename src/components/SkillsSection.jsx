@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 const programmingSkills = [
   {
     name: "C",
@@ -199,25 +201,31 @@ export const SkillsSection = () => {
   return (
     <section id="skills" className="py-24 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span>
-        </h2>
+        
+        <Reveal>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            My <span className="text-primary"> Skills</span>
+          </h2>
+        </Reveal>
 
         <div className="space-y-10">
           {skillCategories.map((cat) => (
             <div key={cat.id}>
-              <h3 className="text-2xl font-semibold mb-6">{cat.title}</h3>
+              
+              <Reveal>
+                <h3 className="text-2xl font-semibold mb-6">{cat.title}</h3>
+              </Reveal>
+              
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {cat.items.map((skill, idx) => (
-                  <div
-                    key={`${cat.id}-${idx}`}
-                    className="p-6 rounded-lg card-hover group"
-                  >
-                    <div className="flex items-center gap-3 text-left mb-4">
-                      {skill.icon}
-                      <h4 className="font-semibold text-lg">{skill.name}</h4>
+                  <Reveal key={`${cat.id}-${idx}`}>
+                    <div className="p-6 rounded-lg card-hover group">
+                      <div className="flex items-center gap-3 text-left mb-4">
+                        {skill.icon}
+                        <h4 className="font-semibold text-lg">{skill.name}</h4>
+                      </div>
                     </div>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
