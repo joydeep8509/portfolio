@@ -18,7 +18,7 @@ export const HeroSection = () => {
                     <a href="#projects" className="cosmic-button">
                         View My Work
                     </a>
-                    <a href="https://drive.google.com/file/d/1mNBpwXTDTLE9EllxQ1d7xMAU60ox-tN0/view?usp=drive_link" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300" target="_blank">
+                    <a href="/projectsimage/Joydeep-Resume.pdf" download className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300" target="_blank">
                         Download CV
                     </a>
                 </div>
