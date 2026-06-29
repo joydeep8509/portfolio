@@ -1,13 +1,17 @@
-import { Briefcase, Code, User } from "lucide-react"
+import { Briefcase, Code, User } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export const AboutSection = () => {
     return <section id="about" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
+            <Reveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 About <span className="text-primary">Me</span>
             </h2>
+            </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <Reveal>
                 <div className="space-y-6">
                     <h3>Passionate Full Stack Developer</h3>
                     <p className="text-muted-foreground">
@@ -24,8 +28,10 @@ export const AboutSection = () => {
                         </a>
                     </div>
                 </div>
+                </Reveal>
 
                 <div className="grid grid-cols-1 gap-6">
+                    <Reveal className="delay-100">
                     <div className="p-6 card-hover rounded-lg">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
@@ -40,7 +46,9 @@ export const AboutSection = () => {
                             </div>
                         </div>
                     </div>
-                    
+                    </Reveal>
+
+                    <Reveal className="delay-200">
                     <div className="p-6 card-hover rounded-lg">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
@@ -55,7 +63,9 @@ export const AboutSection = () => {
                             </div>
                         </div>
                     </div>
-                    
+                    </Reveal>
+
+                    <Reveal className="delay-300">
                     <div className="p-6 card-hover rounded-lg">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
@@ -70,6 +80,7 @@ export const AboutSection = () => {
                             </div>
                         </div>
                     </div>
+                    </Reveal>
                 </div>
             </div>
         </div>
